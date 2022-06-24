@@ -7,6 +7,8 @@ function Cadastro() {
   return (
     <Container>
       <Content>
+        <h3>Crie sua conta</h3>
+        <p>Rapido e grátis, vamos nessa!</p>
         <StyledForm>
           <label>Nome</label>
           <input placeholder="Digite aqui seu nome" />

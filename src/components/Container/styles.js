@@ -9,4 +9,5 @@ export const Container = styled.div`
 
   height: 100%;
   padding-top: 80px;
+  margin-bottom: 80px;
 `;

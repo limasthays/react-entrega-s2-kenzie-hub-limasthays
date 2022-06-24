@@ -10,13 +10,16 @@ export const Content = styled.div`
   border-radius: 3.2px;
 
   background-color: var(--Grey-3);
-  h2 {
-    color: var(--Grey-0);
-    align-self: center;
-  }
 
   p {
     align-self: center;
     color: var(--Grey-1);
+    font-size: 9.6px;
+  }
+
+  h3 {
+    color: var(--Grey-0);
+    align-self: center;
+    font-size: 14.3px;
   }
 `;

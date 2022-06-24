@@ -11,7 +11,7 @@ function Login() {
     <Container>
       <h1>Kenzie Hub</h1>
       <Content>
-        <h2>Login</h2>
+        <h3>Login</h3>
         <FormLogin />
 
         <p>Ainda não possui uma conta?</p>
