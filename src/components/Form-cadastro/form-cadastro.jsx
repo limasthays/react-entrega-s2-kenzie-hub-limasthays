@@ -52,10 +52,12 @@ function FormCadastro() {
     };
     api
       .post("users", newUser)
-      .then((response) =>
-        toast.success("Sucesso ao criar a conta! :) Agora vamos fazer o login.")
-      )
-      .then(() => history.push("/"))
+      .then((response) => {
+        toast.success(
+          "Sucesso ao criar a conta! :) Agora vamos fazer o login."
+        );
+        return history.push("/");
+      })
       .catch((err) => {
         console.log(err);
         toast.error("Opa! Algo deu errado. Confira os dados que você digitou.");
