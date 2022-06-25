@@ -8,6 +8,12 @@ export const StyledForm = styled.form`
   label {
     color: var(--Grey-0);
     font-size: 12px;
+    display: inline;
+    span {
+      margin-left: 10px;
+      color: var(--Color-primary);
+      display: inline;
+    }
   }
 
   input {
