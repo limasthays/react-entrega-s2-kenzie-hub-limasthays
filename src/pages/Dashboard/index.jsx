@@ -1,19 +1,33 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { api } from "../../api/api";
+import CustomContainer from "../../components/Container/custom-container";
+import Header from "../../components/Header";
+import HeaderId from "../../components/Header-id";
+import DivTecnologias from "../../components/Tecnologias";
 
 function Dashboard({ authenticated, setAuthenticated }) {
+  const [user, setUser] = useState();
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     if (authenticated) {
       const id = localStorage.getItem("ID@KENZIE_HUB");
       const idParse = JSON.parse(id);
       api
         .get(`users/${idParse}`)
-        .then((res) => console.log(res))
-        .catch((err) => console.error(err));
+        .then((res) => {
+          setUser(res.data);
+        })
+        .catch((err) => console.error(err))
+        .finally(() => {
+          setLoading(false);
+          console.log(user);
+        });
     } else {
       return history.push("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const history = useHistory();
@@ -25,10 +39,11 @@ function Dashboard({ authenticated, setAuthenticated }) {
   };
 
   return (
-    <>
-      <h1>aqui vai ser a dash</h1>
-      <button onClick={() => logoff()}>logoff</button>
-    </>
+    <CustomContainer>
+      <Header logoff={logoff} />
+      <HeaderId user={user} loading={loading} />
+      <DivTecnologias user={user} loading={loading} />
+    </CustomContainer>
   );
 }
 
