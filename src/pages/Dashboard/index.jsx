@@ -23,7 +23,6 @@ function Dashboard({ authenticated, setAuthenticated }) {
         .catch((err) => console.error(err))
         .finally(() => {
           setLoading(false);
-          console.log(user);
         });
     } else {
       return history.push("/");

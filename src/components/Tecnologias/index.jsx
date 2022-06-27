@@ -10,7 +10,7 @@ function DivTecnologias({ user, loading, handleModal }) {
         <MiniButton onClick={() => handleModal()}>+</MiniButton>
       </div>
 
-      <TechMap />
+      <TechMap user={user} loading={loading} />
     </DivTechs>
   );
 }
