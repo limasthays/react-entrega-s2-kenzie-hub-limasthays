@@ -26,6 +26,12 @@ const Item = styled.ul`
       font-weight: 500;
       font-size: 12px;
     }
+
+    button {
+      color: var(--Grey-0);
+      border: none;
+      background-color: transparent;
+    }
   }
 `;
 

@@ -65,70 +65,74 @@ function FormCadastro() {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmitCadastrar)}>
-      <label>
-        Nome <span>{errors.name && errors.name.message}</span>
-      </label>
-      <input placeholder="Digite aqui seu nome" {...register("name")} />
+    <>
+      <StyledForm onSubmit={handleSubmit(onSubmitCadastrar)}>
+        <label>
+          Nome <span>{errors.name && errors.name.message}</span>
+        </label>
+        <input placeholder="Digite aqui seu nome" {...register("name")} />
 
-      <label>
-        Email <span>{errors.email && errors.email.message}</span>
-      </label>
-      <input placeholder="Digite aqui seu email" {...register("email")} />
+        <label>
+          Email <span>{errors.email && errors.email.message}</span>
+        </label>
+        <input placeholder="Digite aqui seu email" {...register("email")} />
 
-      <label>
-        Senha <span>{errors.password && errors.password.message}</span>
-      </label>
-      <input
-        type="password"
-        placeholder="Digite aqui sua senha"
-        {...register("password")}
-      />
+        <label>
+          Senha <span>{errors.password && errors.password.message}</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Digite aqui sua senha"
+          {...register("password")}
+        />
 
-      <label>
-        Confirmar senha
-        <span>{errors.confirmPassword && errors.confirmPassword.message}</span>
-      </label>
-      <input
-        type="password"
-        placeholder="Digite aqui sua senha para confirmação"
-        {...register("confirmPassword")}
-      />
+        <label>
+          Confirmar senha
+          <span>
+            {errors.confirmPassword && errors.confirmPassword.message}
+          </span>
+        </label>
+        <input
+          type="password"
+          placeholder="Digite aqui sua senha para confirmação"
+          {...register("confirmPassword")}
+        />
 
-      <label>
-        Bio <span>{errors.bio && errors.bio.message}</span>
-      </label>
-      <input placeholder="Escreva um pouco sobre você" {...register("bio")} />
+        <label>
+          Bio <span>{errors.bio && errors.bio.message}</span>
+        </label>
+        <input placeholder="Escreva um pouco sobre você" {...register("bio")} />
 
-      <label>
-        Contato <span>{errors.contact && errors.contact.message}</span>
-      </label>
-      <input
-        type="text"
-        placeholder="Opção de contato"
-        {...register("contact")}
-      />
+        <label>
+          Contato <span>{errors.contact && errors.contact.message}</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Opção de contato"
+          {...register("contact")}
+        />
 
-      <label>Selecionar módulo</label>
-      <select {...register("course_module")}>
-        <option value="Primeiro módulo (Introdução ao Frontend)">
-          Primeiro módulo (Introdução ao Frontend)
-        </option>
-        <option value="Segundo módulo (Frontend Avançado)">
-          Segundo módulo (Frontend Avançado)
-        </option>
-        <option value="Terceiro módulo (Introdução ao Backend)">
-          Terceiro módulo (Introdução ao Backend)
-        </option>
-        <option value="Quarto módulo (Backend Avançado)">
-          Quarto módulo (Backend Avançado)
-        </option>
-      </select>
+        <label>Selecionar módulo</label>
+        <select {...register("course_module")}>
+          <option value="Primeiro módulo (Introdução ao Frontend)">
+            Primeiro módulo (Introdução ao Frontend)
+          </option>
+          <option value="Segundo módulo (Frontend Avançado)">
+            Segundo módulo (Frontend Avançado)
+          </option>
+          <option value="Terceiro módulo (Introdução ao Backend)">
+            Terceiro módulo (Introdução ao Backend)
+          </option>
+          <option value="Quarto módulo (Backend Avançado)">
+            Quarto módulo (Backend Avançado)
+          </option>
+        </select>
 
-      <Button type="submit" color="var(--Color-primary)">
-        Cadastrar
-      </Button>
-    </StyledForm>
+        <Button type="submit" color="var(--Color-primary)">
+          Cadastrar
+        </Button>
+      </StyledForm>
+    </>
   );
 }
 

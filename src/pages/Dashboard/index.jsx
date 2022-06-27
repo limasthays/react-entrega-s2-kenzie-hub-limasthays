@@ -46,7 +46,7 @@ function Dashboard({ authenticated, setAuthenticated }) {
 
   return (
     <CustomContainer>
-      <Header logoff={logoff} />
+      <Header onClick={logoff} buttonTitle="Sair" />
       <HeaderId user={user} loading={loading} />
       <DivTecnologias user={user} loading={loading} handleModal={handleModal} />
       {modal && <Modal handleModal={handleModal} />}

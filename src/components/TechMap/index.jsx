@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../api/api";
 import { Content } from "../Content/container";
 import Item from "./TechItems/style";
+import { FaTrashAlt } from "react-icons/fa";
 
 function TechMap({ user, loading }) {
+  /**
+   * o que falta:
+   * conseguir deletar os itens
+   * deixar a lista reativa
+   * deixar o modal no meio da tela
+   */
   const { techs } = !loading && user;
 
   const deleteTech = (id) => {
@@ -20,7 +27,10 @@ function TechMap({ user, loading }) {
           <li key={tech.id}>
             <span>{tech.title}</span>
             <span>{tech.status}</span>
-            <button onClick={() => deleteTech(tech.id)}>X</button>
+
+            <button onClick={() => deleteTech(tech.id)}>
+              <FaTrashAlt />
+            </button>
           </li>
         ))}
       </Item>
