@@ -4,6 +4,7 @@ const DivTechs = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
 
   padding: 30px 12px;
 

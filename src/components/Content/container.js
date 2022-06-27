@@ -7,7 +7,7 @@ export const Content = styled.div`
 
   width: 296px;
   padding: 33.96px 17.65px;
-  border-radius: 3.2px;
+  border-radius: 4px;
 
   background-color: var(--Grey-3);
 

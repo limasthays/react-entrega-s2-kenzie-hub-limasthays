@@ -3,16 +3,22 @@ import { StyledForm } from "../Form-login/styles";
 import MiniButton from "../Mini-button";
 import StyledModal from "./styles";
 import { useForm } from "react-hook-form";
-//import { api } from "../../api/api";
+import { api } from "../../api/api";
 
 function Modal({ handleModal }) {
   const { register, handleSubmit } = useForm();
 
   const handleDados = (data) => {
     const token = JSON.parse(localStorage.getItem("TOKEN@KENZIE_HUB"));
-    //api.post()
-    console.log(token);
-    console.log(data);
+
+    api
+      .post("users/techs", data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
   };
 
   return (
