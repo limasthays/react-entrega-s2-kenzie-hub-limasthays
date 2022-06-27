@@ -6,6 +6,7 @@ const CustomContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  margin-bottom: 50px;
 
   height: 100%;
   width: 320px;

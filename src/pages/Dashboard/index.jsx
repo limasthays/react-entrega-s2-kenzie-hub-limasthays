@@ -4,6 +4,7 @@ import { api } from "../../api/api";
 import CustomContainer from "../../components/Container/custom-container";
 import Header from "../../components/Header";
 import HeaderId from "../../components/Header-id";
+import Modal from "../../components/Modal";
 import DivTecnologias from "../../components/Tecnologias";
 
 function Dashboard({ authenticated, setAuthenticated }) {
@@ -38,11 +39,18 @@ function Dashboard({ authenticated, setAuthenticated }) {
     history.push("/");
   };
 
+  const [modal, setModal] = useState(false);
+
+  const handleModal = () => {
+    setModal(!modal);
+  };
+
   return (
     <CustomContainer>
       <Header logoff={logoff} />
       <HeaderId user={user} loading={loading} />
-      <DivTecnologias user={user} loading={loading} />
+      <DivTecnologias user={user} loading={loading} handleModal={handleModal} />
+      {modal && <Modal handleModal={handleModal} />}
     </CustomContainer>
   );
 }
